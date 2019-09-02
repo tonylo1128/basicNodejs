@@ -1,0 +1,20 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" 
+integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"> 
+
+
+<form action="/todolist/     <% editData ===null ? 'create' : ('edit'+editData.id )  %>" method="post">
+
+    <div class="form-group">
+      <label for="inputToDoList">Wanna add something to your todo-list?</label>
+
+      <input type="text" class="form-control" 
+      value="<%= editData!==null ? editData.toDo : '' %>"
+      name="inputToDoList" placeholder="Enter your item">
+
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
