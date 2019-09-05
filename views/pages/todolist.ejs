@@ -3,8 +3,10 @@
 integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"> 
 
 
-<form action="/todolist/     <% editData ===null ? 'create' : ('edit'+editData.id )  %>" method="post">
+<form action="/todolist/<%= editData!==null ?('edit/'+editData.id ):'create' %>" method="post">
 
+
+ 
     <div class="form-group">
       <label for="inputToDoList">Wanna add something to your todo-list?</label>
 

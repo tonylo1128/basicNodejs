@@ -96,6 +96,23 @@ app.post("/todolist/create", (req, res) => {
 
 });
 
+app.post("/todolist/edit/:id", (req, res)=>{
+  let inputTemp = req.body.inputToDoList;
+
+  let getUrlID = parseInt(req.params.id);
+    console.log("fuck u on9 jai"+getUrlID);
+
+    for (let i=0; i<ListToDo.length; i++){
+        if(ListToDo[i].id===getUrlID){
+            ListToDo[i].toDo=inputTemp;
+            break;
+        }
+    }
+
+    res.redirect('/');
+});
+
+
 app.get("/delete/:id", (req, res)=>{
     let theDeleItem = parseInt(req.params.id);
   
@@ -104,7 +121,28 @@ app.get("/delete/:id", (req, res)=>{
     res.redirect("/");
 }); 
 
+app.get("/updateState/finish/:id", (req, res)=>{
+  let inputtemp = parseInt(req.params.id);
 
+  for (let i=0; i<ListToDo.length; i++){
+    if(ListToDo[i].id==inputtemp){
+      console.log(ListToDo[i].finish);
+      if(ListToDo[i].finish == false){
+        ListToDo[i].finish = true;
+        console.log(ListToDo[i].finish);
+        
+      }
+      else{
+        ListToDo[i].finish = false;
+        console.log(ListToDo[i].finish);
+      }
+    }
+      
+  }
+  
+
+  res.redirect('/');
+})
 
 
 

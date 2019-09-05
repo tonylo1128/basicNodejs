@@ -29,7 +29,21 @@ integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69p
             <td style="text-align: center"><%= item.id %></td>
             <td style="text-align: center"><%= item.toDo %></td>
             <td style="text-align: center"><%= item.finish %></td>
-            <td style="text-align: center"> <a href="/todolist/edit/<%= item.id %>">Edit</a>／<a href="/delete/<%= item.id %>">Delete</a> </td>
+            <td style="text-align: center"> <a href="/todolist/edit/<%= item.id %>">Edit</a>／
+                <a href="/delete/<%= item.id %>">Delete</a>/
+
+            <a href="/updateState/finish/<%= item.id%>">
+                <% if(item.finish==false) { %>
+                    Finish
+                <%} else { %>
+                    Finished
+                <% }%>   
+            </a>
+            
+
+
+        </td>
+
         </tr>
         <% } ); %>
     </tbody>
